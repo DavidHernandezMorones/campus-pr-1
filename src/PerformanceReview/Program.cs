@@ -68,7 +68,9 @@ namespace PerformanceReview
             Persona persona = FirstYoungerThan(people, fechaFiltro);
             
             emails.ForEach(x => Console.WriteLine(x));
-            
+
+            Console.WriteLine(persona.Name);
+            Console.WriteLine(persona.Birthday);
             Func<double, double, double> suma = (num1, num2) => { return num1 + num2; };
 
             Func<double, double, double> resta = (num1, num2) => { return num1 - num2; };
