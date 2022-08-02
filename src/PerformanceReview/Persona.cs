@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace PerformanceReview
 {
@@ -10,19 +8,10 @@ namespace PerformanceReview
         public string Email { get; set; }
         public DateTime Birthday { get; set; }
 
-        List<string> ToEmails(List<Persona> people)
-        {
-            var myEmailList = from person in people
-                select person.Email;
-            return myEmailList.ToList();
+        public Persona(string name, string email, DateTime birthday) {
+            Name = name;
+            Email = email;
+            Birthday = birthday;
         }
-
-        Persona DateGreaterThan(List<Persona> people, DateTime date)
-        {
-            var query = people.Where(p => p.Birthday > date);
-            var firstOne = query.First();
-            return firstOne;
-        }
-        
     }
 }
